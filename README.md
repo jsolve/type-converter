@@ -1,3 +1,21 @@
+The recommended way to get started using oven in your project is with a dependency management system – the snippet below can be copied and pasted into your build.
+``` xml
+(...)
+<repository>
+	<id>jsolve-repo</id>
+	<name>Jsolve Maven Repository</name>
+	<url>http://maven.jsolve.pl/</url>
+</repository>
+(...)
+<dependency>
+	<groupId>pl.jsolve</groupId>
+	<artifactId>typeconverter</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+</dependency>
+(...)
+```
+---
+
 `TypeConverter` is a utility class that makes type conversion very easy. It's very fast and extendable.
 ## Simple usage
 ``` java
