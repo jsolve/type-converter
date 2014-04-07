@@ -1,4 +1,4 @@
-The recommended way to get started using oven in your project is with a dependency management system – the snippet below can be copied and pasted into your build.
+The recommended way to get started using type converter in your project is with a dependency management system – the snippet below can be copied and pasted into your build.
 ``` xml
 (...)
 <repository>
