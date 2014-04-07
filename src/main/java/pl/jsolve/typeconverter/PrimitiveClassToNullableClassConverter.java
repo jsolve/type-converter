@@ -5,17 +5,17 @@ import java.util.Map;
 
 class PrimitiveClassToNullableClassConverter implements Converter<Class<?>, Class<?>> {
 
-	private static final Map<Class<?>, Class<?>> PRIMITIVES_CONVERTERS = new HashMap<>();
+	private static final Map<Class<?>, Class<?>> primitivesConverters = new HashMap<>();
 
 	public PrimitiveClassToNullableClassConverter() {
-		PRIMITIVES_CONVERTERS.put(byte.class, Byte.class);
-		PRIMITIVES_CONVERTERS.put(short.class, Short.class);
-		PRIMITIVES_CONVERTERS.put(int.class, Integer.class);
-		PRIMITIVES_CONVERTERS.put(long.class, Long.class);
-		PRIMITIVES_CONVERTERS.put(float.class, Float.class);
-		PRIMITIVES_CONVERTERS.put(double.class, Double.class);
-		PRIMITIVES_CONVERTERS.put(boolean.class, Boolean.class);
-		PRIMITIVES_CONVERTERS.put(char.class, Character.class);
+		primitivesConverters.put(byte.class, Byte.class);
+		primitivesConverters.put(short.class, Short.class);
+		primitivesConverters.put(int.class, Integer.class);
+		primitivesConverters.put(long.class, Long.class);
+		primitivesConverters.put(float.class, Float.class);
+		primitivesConverters.put(double.class, Double.class);
+		primitivesConverters.put(boolean.class, Boolean.class);
+		primitivesConverters.put(char.class, Character.class);
 	}
 
 	@Override
@@ -23,6 +23,6 @@ class PrimitiveClassToNullableClassConverter implements Converter<Class<?>, Clas
 		if (sourceClass == null || !sourceClass.isPrimitive()) {
 			return sourceClass;
 		}
-		return PRIMITIVES_CONVERTERS.get(sourceClass);
+		return primitivesConverters.get(sourceClass);
 	}
 }

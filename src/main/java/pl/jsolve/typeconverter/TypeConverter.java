@@ -45,7 +45,7 @@ import pl.jsolve.typeconverter.stringto.StringToShortConverter;
 public final class TypeConverter {
 
 	private static final PrimitiveClassToNullableClassConverter PRIMITIVES_CONVERTER = new PrimitiveClassToNullableClassConverter();
-	private static final ConvertersContainer CONVERTERS_CONTAINER = new ConvertersContainer();
+	private static final ConvertersContainer convertersContainer = new ConvertersContainer();
 
 	private TypeConverter() {
 		throw new AssertionError("Using constructor of this class is prohibited.");
@@ -118,7 +118,7 @@ public final class TypeConverter {
 		Method convertMethod = converter.getClass().getMethods()[0];
 		Class<S> sourceClass = (Class<S>) convertMethod.getParameterTypes()[0];
 		Class<T> targetClass = (Class<T>) convertMethod.getReturnType();
-		CONVERTERS_CONTAINER.registerConverter(sourceClass, targetClass, converter);
+		convertersContainer.registerConverter(sourceClass, targetClass, converter);
 	}
 
 	public static <S, T> T convert(S source, Class<T> targetClass) {
@@ -139,7 +139,7 @@ public final class TypeConverter {
 	}
 
 	private static <S, T> T tryToConvertUsingRegisteredConverters(S source, Class<T> targetClass) {
-		Converter<S, T> converter = CONVERTERS_CONTAINER.getSuitableConverter(source, targetClass);
+		Converter<S, T> converter = convertersContainer.getSuitableConverter(source, targetClass);
 		throwExceptionWhenNoSuitableConverterWasFound(source, targetClass, converter);
 		try {
 			return targetClass.cast(converter.convert(source));
@@ -156,10 +156,10 @@ public final class TypeConverter {
 	}
 
 	public static <S, T> void registerConverter(Class<S> sourceClass, Class<T> targetClass, Converter<S, T> converter) {
-		CONVERTERS_CONTAINER.registerConverter(sourceClass, targetClass, converter);
+		convertersContainer.registerConverter(sourceClass, targetClass, converter);
 	}
 
 	public static <S, T> void unregisterConverter(Class<S> sourceClass, Class<T> targetClass) {
-		CONVERTERS_CONTAINER.unregisterConverter(sourceClass, targetClass);
+		convertersContainer.unregisterConverter(sourceClass, targetClass);
 	}
 }
