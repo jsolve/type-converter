@@ -45,7 +45,7 @@
 		<repository>
 			<id>jsolve-maven</id>
 			<name>Jsolve Maven Repository</name>
-			<url>http://repo.kurylek.pl/</url>
+			<url>http://maven.jsolve.pl/</url>
 		</repository>
 	</repositories>
 
