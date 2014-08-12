@@ -5,7 +5,7 @@ import java.util.Map;
 
 class PrimitiveClassToNullableClassConverter implements Converter<Class<?>, Class<?>> {
 
-	private static final Map<Class<?>, Class<?>> primitivesConverters = new HashMap<>();
+	private static final Map<Class<?>, Class<?>> primitivesConverters = new HashMap<Class<?>, Class<?>>();
 
 	public PrimitiveClassToNullableClassConverter() {
 		primitivesConverters.put(byte.class, Byte.class);

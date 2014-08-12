@@ -1,11 +1,11 @@
 package pl.jsolve.typeconverter;
 
-import static java.util.Collections.synchronizedMap;
-
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+
+import static java.util.Collections.synchronizedMap;
 
 class ConvertersContainer {
 
@@ -60,7 +60,7 @@ class ConvertersContainer {
 	}
 
 	private static List<Class<?>> getClasses(Class<?> clazz) {
-		List<Class<?>> classes = new LinkedList<>();
+		List<Class<?>> classes = new LinkedList<Class<?>>();
 		classes.add(clazz);
 		while (!Object.class.equals(clazz) && !clazz.isInterface() && !clazz.isPrimitive()) {
 			clazz = clazz.getSuperclass();

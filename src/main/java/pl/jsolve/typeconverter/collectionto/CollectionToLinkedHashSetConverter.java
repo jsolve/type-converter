@@ -7,6 +7,6 @@ public class CollectionToLinkedHashSetConverter extends CollectionToAbstractConv
 
 	@Override
 	public LinkedHashSet<?> convert(AbstractCollection<?> source) {
-		return new LinkedHashSet<>(source);
+		return new LinkedHashSet<Object>(source);
 	}
 }

@@ -7,6 +7,6 @@ public class CollectionToLinkedListConverter extends CollectionToAbstractConvert
 
 	@Override
 	public LinkedList<?> convert(AbstractCollection<?> source) {
-		return new LinkedList<>(source);
+		return new LinkedList<Object>(source);
 	}
 }

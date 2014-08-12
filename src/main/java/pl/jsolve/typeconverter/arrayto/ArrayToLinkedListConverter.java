@@ -6,7 +6,7 @@ public class ArrayToLinkedListConverter extends ArrayToAbstractConverter<LinkedL
 
 	@Override
 	public LinkedList<?> convert(Object[] source) {
-		LinkedList<Object> list = new LinkedList<>();
+		LinkedList<Object> list = new LinkedList<Object>();
 		java.util.Collections.addAll(list, source);
 		return list;
 	}
