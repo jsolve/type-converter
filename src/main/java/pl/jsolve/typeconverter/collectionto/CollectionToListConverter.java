@@ -8,6 +8,6 @@ public class CollectionToListConverter extends CollectionToAbstractConverter<Lis
 
 	@Override
 	public List<?> convert(AbstractCollection<?> source) {
-		return new ArrayList<>(source);
+		return new ArrayList<Object>(source);
 	}
 }

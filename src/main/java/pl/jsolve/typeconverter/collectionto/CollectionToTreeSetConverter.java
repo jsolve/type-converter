@@ -7,6 +7,6 @@ public class CollectionToTreeSetConverter extends CollectionToAbstractConverter<
 
 	@Override
 	public TreeSet<?> convert(AbstractCollection<?> source) {
-		return new TreeSet<>(source);
+		return new TreeSet<Object>(source);
 	}
 }

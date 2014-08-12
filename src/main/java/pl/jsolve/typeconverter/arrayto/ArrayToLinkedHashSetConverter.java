@@ -6,7 +6,7 @@ public class ArrayToLinkedHashSetConverter extends ArrayToAbstractConverter<Link
 
 	@Override
 	public LinkedHashSet<?> convert(Object[] source) {
-		LinkedHashSet<Object> set = new LinkedHashSet<>();
+		LinkedHashSet<Object> set = new LinkedHashSet<Object>();
 		java.util.Collections.addAll(set, source);
 		return set;
 	}

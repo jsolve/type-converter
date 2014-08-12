@@ -7,7 +7,7 @@ public class ArrayToListConverter extends ArrayToAbstractConverter<List<?>> {
 
 	@Override
 	public List<?> convert(Object[] source) {
-		ArrayList<Object> list = new ArrayList<>();
+		ArrayList<Object> list = new ArrayList<Object>();
 		java.util.Collections.addAll(list, source);
 		return list;
 	}

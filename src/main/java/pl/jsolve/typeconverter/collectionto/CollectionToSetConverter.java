@@ -8,6 +8,6 @@ public class CollectionToSetConverter extends CollectionToAbstractConverter<Set<
 
 	@Override
 	public Set<?> convert(AbstractCollection<?> source) {
-		return new HashSet<>(source);
+		return new HashSet<Object>(source);
 	}
 }
