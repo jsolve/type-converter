@@ -22,6 +22,7 @@ import pl.jsolve.typeconverter.collectionto.CollectionToSetConverter;
 import pl.jsolve.typeconverter.collectionto.CollectionToShortArrayConverter;
 import pl.jsolve.typeconverter.collectionto.CollectionToStringArrayConverter;
 import pl.jsolve.typeconverter.collectionto.CollectionToTreeSetConverter;
+import pl.jsolve.typeconverter.enumto.EnumToStringConverter;
 import pl.jsolve.typeconverter.numberto.NumberToBigDecimalConverter;
 import pl.jsolve.typeconverter.numberto.NumberToBigIntegerConverter;
 import pl.jsolve.typeconverter.numberto.NumberToBooleanConverter;
@@ -31,16 +32,7 @@ import pl.jsolve.typeconverter.numberto.NumberToFloatConverter;
 import pl.jsolve.typeconverter.numberto.NumberToIntegerConverter;
 import pl.jsolve.typeconverter.numberto.NumberToLongConverter;
 import pl.jsolve.typeconverter.numberto.NumberToShortConverter;
-import pl.jsolve.typeconverter.stringto.StringToBigDecimalConverter;
-import pl.jsolve.typeconverter.stringto.StringToBigIntegerConverter;
-import pl.jsolve.typeconverter.stringto.StringToBooleanConverter;
-import pl.jsolve.typeconverter.stringto.StringToByteConverter;
-import pl.jsolve.typeconverter.stringto.StringToDoubleConverter;
-import pl.jsolve.typeconverter.stringto.StringToFloatConverter;
-import pl.jsolve.typeconverter.stringto.StringToIntegerConverter;
-import pl.jsolve.typeconverter.stringto.StringToLongConverter;
-import pl.jsolve.typeconverter.stringto.StringToNumberConverter;
-import pl.jsolve.typeconverter.stringto.StringToShortConverter;
+import pl.jsolve.typeconverter.stringto.*;
 
 public final class TypeConverter {
 
@@ -111,8 +103,11 @@ public final class TypeConverter {
 		registerConverter(new CalendarToLongConverter());
 		registerConverter(new DateToCalendarConverter());
 		registerConverter(new CalendarToDateConverter());
-	}
 
+		// enum conversions
+		registerConverter(new EnumToStringConverter());
+
+	}
 	@SuppressWarnings("unchecked")
 	private static <S, T> void registerConverter(Converter<S, T> converter) {
 		Method convertMethod = converter.getClass().getMethods()[0];
