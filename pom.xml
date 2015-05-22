@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>pl.jsolve</groupId>
 	<artifactId>typeconverter</artifactId>
-	<version>1.0.0</version>
+	<version>1.0.1-SNAPSHOT</version>
 	<name>type-converter</name>
 	<description>A utility class that makes type conversion very easy</description>
 	<url>https://github.com/jsolve/type-converter</url>
