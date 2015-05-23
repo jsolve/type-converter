@@ -3,7 +3,7 @@ The recommended way to get started using type converter in your project is with 
 <dependency>
 	<groupId>pl.jsolve</groupId>
 	<artifactId>typeconverter</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>1.0.1</version>
 </dependency>
 ```
 ---
